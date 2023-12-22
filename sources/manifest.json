@@ -1,0 +1,31 @@
+{
+    "Actions": [
+        {
+            "Icon": "images/api_action",
+            "Name": "VMix input select",
+            "States": [
+                { "Image": "images/api_key" }
+            ],
+            "Tooltip": "Make an API Request",
+            "UUID": "com.github.congoblue.streamdeck-vmix-input-api"
+        }
+    ],
+    "SDKVersion": 2,
+    "Author": "congoblue",
+    "CodePath": "index.html",
+    "PropertyInspectorPath": "propertyinspector/index.html",
+    "Description": "REST Easily",
+    "Name": "VMix input select",
+    "Icon": "images/api_action",
+    "Category": "API Request",
+    "CategoryIcon": "images/api_action",  
+    "URL": "https://github.com/congoblue/streamdeck-vmix-input-api/",
+    "Version": "0.2",
+    "OS": [
+        { "Platform": "mac",     "MinimumVersion": "10.11" },
+        { "Platform": "windows", "MinimumVersion": "10"    }
+    ],
+    "Software": {
+        "MinimumVersion": "4.1"
+    }
+}

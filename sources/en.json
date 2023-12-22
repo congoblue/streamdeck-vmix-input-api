@@ -1,0 +1,33 @@
+{
+  "Description": "REST Easily", 
+  "Name": "VMix input select", 
+  "com.github.congoblue.streamdeck-vmix-input-api": {
+    "Name": "VMix Input Select", 
+    "Tooltip": "Send VMix API command"
+  },
+  
+  "Localization": {
+      "URL": "URL",
+      "Enable Advanced Settings": "Enable Advanced Settings",
+      "Advanced Settings": "Advanced Settings",
+      "Enable green success indicator": "Enable green success indicator",
+      "Specify request parameters": "Specify request parameters",
+      "HTTP Method" : "HTTP Method",
+      "Content Type" : "Content Type",
+      "Request Headers" : "Request Headers",
+      "Request Body" : "Request Body",
+      "Set button image based on response": "Set button image based on response",
+      "XML Field 1": "XML Field 1",
+      "XML Field 2": "XML Field 2",
+      "Expected Value 1": "Expected Value 1",
+      "Expected Value 2": "Expected Value 2",
+      "Image to display when...": "Image to display when...",
+      "..matched1": "..matched 1",
+      "..matched2": "..matched 2",
+      "..unmatched": "..unmatched",
+      "Periodically poll a URL for status": "Periodically poll a URL for status",
+      "Status URL": "Status URL",
+      "Poll Frequency": "Poll Frequency",
+      "Parse a different field and value from response": "Parse a different field and value from response"
+  }
+}
