@@ -1,26 +1,55 @@
-# StreamDeck VMix API Request Plugin
+# StreamDeck VMix API Input Plugin
 
-A Plugin for the Elgato Stream Deck for sending VMix commands using API requests.
+A Plugin for the Elgato Stream Deck for selecting VMix inputs using API requests and reading back VMix status to give feedback using the button icon.
 
-Additionally, the plugin can poll a (different, if required) API at a
-pre-determined interval in order to update the key icon to reflect external
-changes in state.
+This allows you to create StreamDeck buttons which operate like a production switcher to select VMix inputs and show Red (Program), Green (Preview), or Grey (unselected).
 
-### Features:
-* Specifying HTTP Method, Headers, and Body if applicable
-* Parsing of request response to set key icon
-* Periodic Polling of VMix status API
-* Polling of status on startup, configuration changes, and upon initial display
-  (when changing to a streamdeck profile with the plugin visible)
+Based on https://github.com/mjbnz/streamdeck-api-request
 
-### Response parsing supports:
-* Path to an XML field in the VMix status response, and expected matching value
-* See below for typical XML response from VMix
+## Installing the plugin
 
-### Setting icons
-* Note, no button icon must be set in the Streamdeck App. If you've allocated a button icon yourself then the API cannot change it. Click on the "Down" arrow on the button image and select "Reset to Default". The icon set by the API should then show up.
+* Go to the Streamdeck plugins folder at `C:\Users\%USERNAME%\AppData\Roaming\Elgato\StreamDeck\Plugins\`
+* Create a folder for this plugin called `com.github.congoblue\streamdeck-vmix-input-api.sdPlugin`
+* Copy the contents of the `\sources` folder into this new folder
+* Shut down the Streamdeck software and restart it
+* The VMix Input API Request plugin should now be listed in the Streamdeck software.
 
-## Getting Started on plugin editing
+## Set plugin options to control VMix
+
+For this example we will create a button which controls Input 1 on VMix.
+
+![Streamdeck plugin settings](apibutton1.png)
+
+* Drag the "API Input Request" plugin onto one of the buttons in the Streamdeck software.
+* Set the title to give the Streamdeck button caption (in this example, `CAM1`). Use the [T] menu next to the Title to position the caption and set the font.
+* Set the URL option to `http://127.0.0.1:8088/api/Function=PreviewInput&Input=1` (replace the `Input=` parameter with desired input number. You can also use the input name on VMix but use `%20` for spaces)
+* Tick the [Enable Advanced Settings] box.
+* Tick the [Set Button Image based on response] box.
+* Set [XML Field 1] to `active` (the input number of the program output)
+* Set [Expected Value 1] to the input number (in this example `1`).
+* Set [XML Field 2] to `preview` (the input number of the program output)
+* Set [Expected Value 2] to the input number (in this example `1`).
+* Set [Image to display when matched 1] to the Program state icon. In this case we will use `blank_red.png` from the images folder. 
+* Set [Image to display when matched 2] to the Preview state icon. In this case we will use `blank_green.png` from the images folder.
+* Set [Image to display when unmatched] to the unselected state icon. In this case we will use `blank_grey.png` from the images folder.
+* Tick the [Periodically poll a URL for status] box.
+* Set [Status URL] to `http://127.0.0.1:8088/api`
+* Set [Poll Frequency] to `1 second`.
+
+If you have VMix running, the Streamdeck button should now show a red, green or grey border depending on whether the input is selected for program out, or preview, or unselected. Pressing the button (or using the VMix UI) should change the state.
+
+Copy and paste this button to create other input buttons with the same settings.
+
+![Streamdeck plugin example setup](example.jpg)
+
+> If VMix is not running the button will show a yellow exclamation.
+
+### If the button icon does not change state
+
+> No button icon must be set in the Streamdeck App. If you've allocated a button icon yourself then the API cannot change it. Click on the "Down" arrow on the button image and select "Reset to Default". The icon set by the API should then show up.
+
+## Notes on creating a plugin for Streamdeck
+
 Getting started with Stream Deck.
 
 The fastest way to get started with Stream Deck is using the plugin template.
