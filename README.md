@@ -9,7 +9,7 @@ Based on https://github.com/mjbnz/streamdeck-api-request
 ## Installing the plugin
 
 * Go to the Streamdeck plugins folder at `C:\Users\%USERNAME%\AppData\Roaming\Elgato\StreamDeck\Plugins\`
-* Create a folder for this plugin called `com.github.congoblue\streamdeck-vmix-input-api.sdPlugin`
+* Create a folder for this plugin called `com.github.congoblue.streamdeck-vmix-input-api.sdPlugin`
 * Copy the contents of the `\sources` folder into this new folder
 * Shut down the Streamdeck software and restart it
 * The VMix Input API Request plugin should now be listed in the Streamdeck software.
