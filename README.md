@@ -20,7 +20,7 @@ For this example we will create a button which controls Input 1 on VMix.
 
 ![Streamdeck plugin settings](apibutton1.png)
 
-* Drag the "API Input Request" plugin onto one of the buttons in the Streamdeck software.
+* Drag the "VMix Input Select" plugin onto one of the buttons in the Streamdeck software.
 * Set the title to give the Streamdeck button caption (in this example, `CAM1`). Use the [T] menu next to the Title to position the caption and set the font.
 * Set the URL option to `http://127.0.0.1:8088/api/Function=PreviewInput&Input=1` (replace the `Input=` parameter with desired input number. You can also use the input name on VMix but use `%20` for spaces)
 * Tick the [Enable Advanced Settings] box.
